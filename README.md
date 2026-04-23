@@ -5,6 +5,8 @@
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5+-green.svg)](https://matplotlib.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+🚀 Key Insight: Greed increases trading activity but concentrates downside risk through larger losses and weaker risk control.
+
 🔥 HEADER (ADD THIS UNDER TITLE)
 > This project focuses on controlling trader behavior under different sentiment regimes rather than predicting market direction.
 ✅ EXECUTIVE SUMMARY (REFINED)
@@ -15,6 +17,8 @@ This project analyzes 211K+ crypto trades alongside Bitcoin Fear & Greed sentime
 The analysis reveals that sentiment significantly influences trading behavior, particularly in terms of risk-taking, trade frequency, and loss magnitude.
 
 A rule-based system is developed to adjust trading behavior dynamically across sentiment regimes, improving risk stability and reducing exposure to large losses.
+
+This demonstrates that managing trader behavior can be as important as predicting market direction.
 ✅ KEY INSIGHT (ELITE VERSION)
 ## Key Insight
 
@@ -43,7 +47,7 @@ The goal is to control behavioral bias rather than predict market direction.
 | Win Rate          | 0.411         | 0.409         |
 | Max Drawdown      | -443,038      | -221,519      |
 
-The strategy significantly reduces maximum drawdown, at the cost of lower overall returns. This highlights a trade-off between risk control and profitability.
+The strategy significantly reduces maximum drawdown, at the cost of lower overall returns. This shows that sentiment-based rules improve downside protection, even though they reduce overall return potential.
 ✅ KEY FINDINGS (SHARPENED)
 ## Key Findings
 
