@@ -5,6 +5,8 @@
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5+-green.svg)](https://matplotlib.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+> This project focuses on controlling trader behavior under different sentiment regimes rather than predicting market direction.
+
 ## Executive Summary
 Analysis of 211K+ Hyperliquid trades merged with Fear & Greed Index data. Quantifies sentiment's impact on performance, revealing behavioral patterns and asymmetric risks. Delivers rule-based trading system and backtested strategies for risk reduction.
 
