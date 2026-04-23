@@ -5,7 +5,9 @@
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5+-green.svg)](https://matplotlib.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-🚀 Key Insight: Greed increases trading activity but concentrates downside risk through larger losses and weaker risk control.
+## 🚀 Key Insight
+
+Greed increases trading activity but concentrates downside risk through larger losses and weaker risk control.
 
 🔥 HEADER (ADD THIS UNDER TITLE)
 > This project focuses on controlling trader behavior under different sentiment regimes rather than predicting market direction.
@@ -18,11 +20,11 @@ The analysis reveals that sentiment significantly influences trading behavior, p
 
 A rule-based system is developed to adjust trading behavior dynamically across sentiment regimes, improving risk stability and reducing exposure to large losses.
 
-This demonstrates that managing trader behavior can be as important as predicting market direction.
+This shows that managing trader behavior is often more impactful than predicting market direction.
 ✅ KEY INSIGHT (ELITE VERSION)
 ## Key Insight
 
-Higher trading activity during Greed phases does not translate into better performance. While win rates increase slightly, losses grow disproportionately larger, indicating that risk asymmetry—not win frequency—drives outcomes.
+Higher trading activity during Greed phases does not translate into better performance. While win rates increase slightly, losses increase disproportionately relative to gains, indicating that risk asymmetry—not win frequency—drives outcomes.
 
 Neutral sentiment provides the most stable environment, with balanced returns and controlled downside risk.
 ✅ TRADING SYSTEM LOGIC (KEEP BUT CLEAN)
@@ -48,6 +50,8 @@ The goal is to control behavioral bias rather than predict market direction.
 | Max Drawdown      | -443,038      | -221,519      |
 
 The strategy significantly reduces maximum drawdown, at the cost of lower overall returns. This shows that sentiment-based rules improve downside protection, even though they reduce overall return potential.
+
+Note: This is a simplified backtest and does not include transaction costs or slippage.
 ✅ KEY FINDINGS (SHARPENED)
 ## Key Findings
 
