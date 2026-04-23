@@ -15,8 +15,8 @@ def trade_frequency_vs_performance(df):
         df.groupby(["trade_date", "sentiment_label"])
         .agg(
             trade_count=("Account", "count"),
-            avg_pnl=("closedPnL", "mean"),
-            total_pnl=("closedPnL", "sum"),
+            avg_pnl=("closedpnl", "mean"),
+            total_pnl=("closedpnl", "sum"),
         )
         .reset_index()
     )
@@ -59,21 +59,21 @@ def trade_frequency_vs_performance(df):
 # Analysis 2: Extreme Loss Analysis
 def extreme_loss_analysis(df):
     # Top 10% losses
-    losses = df[df["closedPnL"] < 0]["closedPnL"]
+    losses = df[df["closedpnl"] < 0]["closedpnl"]
     threshold = losses.quantile(0.1)  # Top 10% worst losses
-    extreme_losses = df[df["closedPnL"] <= threshold]
+    extreme_losses = df[df["closedpnl"] <= threshold]
 
     # By sentiment
     extreme_by_sentiment = extreme_losses.groupby("sentiment_label").agg(
-        count=("closedPnL", "count"),
-        avg_extreme_loss=("closedPnL", "mean"),
-        total_extreme_loss=("closedPnL", "sum"),
+        count=("closedpnl", "count"),
+        avg_extreme_loss=("closedpnl", "mean"),
+        total_extreme_loss=("closedpnl", "sum"),
     )
     print("Extreme Losses by Sentiment:")
     print(extreme_by_sentiment)
 
     # Histogram of extreme losses
-    extreme_losses["closedPnL"].hist(bins=50)
+    extreme_losses["closedpnl"].hist(bins=50)
     plt.title("Distribution of Extreme Losses")
     plt.xlabel("PnL")
     plt.ylabel("Frequency")
@@ -88,7 +88,7 @@ def symbol_sentiment_sensitivity(df):
             df.groupby(["Coin", "sentiment_label"])
             .agg(
                 trade_count=("Account", "count"),
-                avg_pnl=("closedPnL", "mean"),
+                avg_pnl=("closedpnl", "mean"),
                 win_rate=("is_profit", "mean"),
             )
             .reset_index()
@@ -118,13 +118,13 @@ def symbol_sentiment_sensitivity(df):
 
 # Analysis 4: Volatility of Returns
 def volatility_of_returns(df):
-    sentiment_vol = df.groupby("sentiment_label")["closedPnL"].std()
+    sentiment_vol = df.groupby("sentiment_label")["closedpnl"].std()
     print("PnL Volatility by Sentiment:")
     print(sentiment_vol)
 
     # Boxplot for visualization
     df.boxplot(
-        column="closedPnL",
+        column="closedpnl",
         by="sentiment_label",
         figsize=(10, 6),
         patch_artist=True,
@@ -151,7 +151,7 @@ def pnl_vs_trade_size(df):
             subset = df[df["sentiment_label"] == sent]
             plt.scatter(
                 subset["trade_notional"],
-                subset["closedPnL"],
+                subset["closedpnl"],
                 label=sent,
                 alpha=0.5,
                 s=10,
@@ -168,15 +168,15 @@ def pnl_vs_trade_size(df):
         for sent in sentiments:
             subset = df[df["sentiment_label"] == sent]
             if len(subset) > 10:
-                corr = subset[["trade_notional", "closedPnL"]].corr().iloc[0, 1]
+                corr = subset[["trade_notional", "closedpnl"]].corr().iloc[0, 1]
                 print(f"Correlation PnL vs Size in {sent}: {corr:.2f}")
 
 
 # Analysis 5: Extreme Loss Behavior
 def extreme_loss_behavior(df):
-    losses = df[df["closedPnL"] < 0]["closedPnL"]
+    losses = df[df["closedpnl"] < 0]["closedpnl"]
     threshold = losses.quantile(0.1)
-    extreme_losses = df[df["closedPnL"] <= threshold]
+    extreme_losses = df[df["closedpnl"] <= threshold]
 
     sentiments = sorted(extreme_losses["sentiment_label"].dropna().unique())
     fig, axes = plt.subplots(1, len(sentiments), figsize=(15, 5), sharey=True)
@@ -191,7 +191,7 @@ def extreme_loss_behavior(df):
     for i, sent in enumerate(sentiments):
         subset = extreme_losses[extreme_losses["sentiment_label"] == sent]
         axes[i].hist(
-            subset["closedPnL"], bins=20, alpha=0.7, color=colors.get(sent, "gray")
+            subset["closedpnl"], bins=20, alpha=0.7, color=colors.get(sent, "gray")
         )
         axes[i].set_title(f"Extreme Losses: {sent}")
         axes[i].set_xlabel("PnL ($)")
@@ -200,7 +200,7 @@ def extreme_loss_behavior(df):
     plt.savefig("outputs/extreme_loss_behavior.png", dpi=150, bbox_inches="tight")
     plt.close()
 
-    stats = extreme_losses.groupby("sentiment_label")["closedPnL"].agg(
+    stats = extreme_losses.groupby("sentiment_label")["closedpnl"].agg(
         ["count", "mean", "min"]
     )
     print("Extreme Loss Stats by Sentiment:")
@@ -211,8 +211,8 @@ def extreme_loss_behavior(df):
 def risk_reward_patterns(df):
     risk_reward = df.groupby("sentiment_label").agg(
         win_rate=("is_profit", "mean"),
-        avg_loss=("closedPnL", lambda x: x[x < 0].mean() if (x < 0).any() else 0),
-        avg_win=("closedPnL", lambda x: x[x > 0].mean() if (x > 0).any() else 0),
+        avg_loss=("closedpnl", lambda x: x[x < 0].mean() if (x < 0).any() else 0),
+        avg_win=("closedpnl", lambda x: x[x > 0].mean() if (x > 0).any() else 0),
     )
 
     plt.figure(figsize=(8, 6))

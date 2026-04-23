@@ -10,12 +10,12 @@ stats = {}
 for name, group in grouped:
     stats[name] = {
         "count": len(group),
-        "avg_pnl": group["closedPnL"].mean(),
-        "win_rate": (group["closedPnL"] > 0).mean(),
+        "avg_pnl": group["closedpnl"].mean(),
+        "win_rate": (group["closedpnl"] > 0).mean(),
         "avg_leverage": group.get("leverage", pd.Series()).mean()
         if "leverage" in group.columns
         else None,
-        "avg_loss": group[group["closedPnL"] < 0]["closedPnL"].mean(),
+        "avg_loss": group[group["closedpnl"] < 0]["closedpnl"].mean(),
         "trade_count": len(group),
     }
 

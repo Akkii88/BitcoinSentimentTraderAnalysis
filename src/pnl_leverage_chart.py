@@ -10,7 +10,7 @@ df["leverage_bucket"] = pd.qcut(df["size"], q=3, labels=["Low", "Medium", "High"
 
 # Group by sentiment and leverage bucket, compute avg PnL
 grouped = (
-    df.groupby(["sentiment_label", "leverage_bucket"])["closedPnL"].mean().reset_index()
+    df.groupby(["sentiment_label", "leverage_bucket"])["closedpnl"].mean().reset_index()
 )
 
 # Plot: Bar chart grouped by sentiment
@@ -24,7 +24,7 @@ for i, sent in enumerate(sentiments):
     subset = grouped[grouped["sentiment_label"] == sent]
     ax.bar(
         [x + i * bar_width for x in x_positions],
-        subset["closedPnL"],
+        subset["closedpnl"],
         width=bar_width,
         label=sent,
         alpha=0.7,

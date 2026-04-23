@@ -26,12 +26,12 @@ def compute_metrics(pnl_series):
 
 
 # Baseline: Original PnL
-baseline_metrics = compute_metrics(df["closedPnL"])
+baseline_metrics = compute_metrics(df["closedpnl"])
 
 # Strategy: Filter allowed trades and adjust PnL by position_size_factor
 strategy_df = df[df["trade_allowed"] == True].copy()
 strategy_df["adjusted_pnl"] = (
-    strategy_df["closedPnL"] * strategy_df["position_size_factor"]
+    strategy_df["closedpnl"] * strategy_df["position_size_factor"]
 )
 strategy_metrics = compute_metrics(strategy_df["adjusted_pnl"])
 

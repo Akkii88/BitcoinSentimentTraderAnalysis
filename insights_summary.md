@@ -1,41 +1,20 @@
 # Insights Summary
 
-1. **Extreme Greed Creates High Upside but Severe Downside Risk**: Average profits reach $206 with a 55% win rate, but losses escalate sharply to $463 on average. This asymmetry shows that risk is not controlled during euphoric phases, leading to unstable returns—overconfidence blinds rational sizing.
-   - **Psychology**: Overconfidence in Greed phases makes traders underestimate risks, ignoring FOMO-driven impulse buys that inflate positions beyond safe levels.
+1. In Greed markets, average PnL is higher but win rate is lower, indicating riskier trades.
 
-2. **Fear Markets Favor Selective, Higher-Quality Trades**: Despite a lower win rate (~38%), average PnL remains relatively stable (~$128), suggesting that traders take fewer but more deliberate positions, often capturing rebounds rather than chasing trends—though losses hit -$216 avg due to prolonged holds.
-   - **Psychology**: Loss aversion in Fear prompts cautious, selective trades, avoiding FOMO by waiting for quality setups, but anchoring to sunk costs delays exits.
+2. Fear markets show fewer trades but higher quality (higher win rate).
 
-3. **Greed Triggers Overtrading Decay**: 11,292 trades yield $54 avg PnL (44% win rate), eroded by impulsive entries chasing momentum, increasing transaction costs and poor timing by 20-30% vs. Neutral periods.
-   - **Psychology**: FOMO in Greed drives overtrading as traders chase momentum, leading to impulsive entries and poor timing from herd behavior.
+3. Higher leverage in Extreme Greed leads to larger losses.
 
-4. **Neutral Sentiment Produces the Most Consistent Performance**: With a ~49% win rate and stable PnL (~$27), Neutral conditions show balanced behavior and controlled risk-taking, leading to more predictable outcomes compared to emotionally driven markets—achieving 15% better Sharpe ratio.
-   - **Psychology**: Neutral sentiment allows rational decision-making, free from FOMO or panic, enabling consistent, bias-minimized trades.
-
-5. **Extreme Fear Induces Paralysis**: 2,326 trades (lowest volume) produce 29% win rate and $1.89 avg PnL, as fear freezes action, missing 40% of potential recovery opportunities in volatile markets.
-   - **Psychology**: Panic selling in Extreme Fear causes decision paralysis, where loss aversion prevents action, leading to missed rebounds.
-
-6. **Greed Amplifies Loss Severity**: Extreme Greed and Greed show -$463 and -$414 avg losses (2x Neutral's -$31), stemming from unchecked leverage and FOMO, destroying portfolios in euphoric phases.
-   - **Psychology**: FOMO in Greed encourages reckless leverage, amplifying losses when euphoria fades into reality checks.
-
-7. **Behavioral Bias in Profit Capture**: Fear markets exhibit 18% correlation between size and PnL (larger trades pay off), while Greed's -12% indicates over-sizing erodes returns—Greed traders hold losers longer, Fear cuts quickly.
-   - **Psychology**: Disposition effect in Greed leads to holding losers (overconfidence), while loss aversion in Fear prompts quick cuts.
-
-8. **Extreme Loss Severity in Greed**: Greed periods dominate extreme losses (142 instances, avg -$2,479), far exceeding Neutral's 10 (avg -$473), as euphoria blinds traders to catastrophic tail risks.
-   - **Psychology**: Overconfidence in Greed ignores tail risks, leading to severe losses when FOMO-driven bets fail.
-
-9. **Risk-Reward Optimization in Neutral**: Neutral sentiment offers superior risk-reward with 49% win rate and $31 avg losses vs. Extreme Greed's 55% wins offset by $463 losses—emotion-free trading minimizes downside while sustaining upside.
-   - **Psychology**: Neutral avoids FOMO and panic, enabling balanced risk-taking without emotional distortions.
+4. Volatility is ~10x higher in extreme sentiment, which explains unstable performance.
 
 # Strategy Recommendations
 
-1. **Sentiment-Gated Leverage Scaling**: Cut position sizes 25% in Greed/Extreme Greed to curb $400+ avg losses; backtest shows 18% drawdown reduction without sacrificing Neutral's 49% win rate.
+1. Reduce leverage in Fear markets to avoid amplified losses.
 
-2. **Contrarian Entry Filters**: Block Greed longs, favor Fear signals—data indicates 15% alpha from avoiding 44% win-rate traps, prioritizing quality over volume.
+2. Avoid overtrading in Greed periods; wait for better setups.
 
-3. **Dynamic Risk Parity**: Allocate 50% to Neutral for stability, 30% to Fear for recovery, 20% to Greed for upside—optimizes to 1.2 Sharpe, balancing volatility extremes.
+3. Use sentiment as an entry filter: prefer Fear for longs.
 
-4. **Circuit Breakers for Overtrading**: Halt after 3 losses in Greed; empirical analysis reveals 25% fewer catastrophic events, preserving capital for higher-probability setups.
-
-5. **Volatility-Adjusted Sizing**: Scale inversely to sentiment std dev (e.g., 40% smaller in Greed's 1,862 vs. Neutral's 143)—reduces tail risk by 30%, enhancing long-term returns.
+4. Adjust risk dynamically based on sentiment volatility.
 

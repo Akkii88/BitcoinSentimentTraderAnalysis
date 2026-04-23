@@ -77,9 +77,9 @@ def apply_trading_rules(df):
     )
 
     # Optional: Flag high-risk trades based on PnL history (if available)
-    if "closedPnL" in df.columns:
+    if "closedpnl" in df.columns:
         df["high_risk_flag"] = (
-            df["closedPnL"] < df["stop_loss_pct"] * -0.01
+            df["closedpnl"] < df["stop_loss_pct"] * -0.01
         )  # Example: If loss exceeds stop
 
     return df

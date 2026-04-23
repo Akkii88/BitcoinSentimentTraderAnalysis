@@ -5,13 +5,12 @@
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5+-green.svg)](https://matplotlib.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🚀 Key Insight
+## Key Insight
 
 Greed increases trading activity but concentrates downside risk through larger losses and weaker risk control.
 
-🔥 HEADER (ADD THIS UNDER TITLE)
 > This project focuses on controlling trader behavior under different sentiment regimes rather than predicting market direction.
-✅ EXECUTIVE SUMMARY (REFINED)
+
 ## Executive Summary
 
 This project analyzes 211K+ crypto trades alongside Bitcoin Fear & Greed sentiment data to understand how market psychology impacts trader performance.
@@ -21,13 +20,13 @@ The analysis reveals that sentiment significantly influences trading behavior, p
 A rule-based system is developed to adjust trading behavior dynamically across sentiment regimes, improving risk stability and reducing exposure to large losses.
 
 This shows that managing trader behavior is often more impactful than predicting market direction.
-✅ KEY INSIGHT (ELITE VERSION)
+
 ## Key Insight
 
 Higher trading activity during Greed phases does not translate into better performance. While win rates increase slightly, losses increase disproportionately relative to gains, indicating that risk asymmetry—not win frequency—drives outcomes.
 
 Neutral sentiment provides the most stable environment, with balanced returns and controlled downside risk.
-✅ TRADING SYSTEM LOGIC (KEEP BUT CLEAN)
+
 ## Trading System Logic
 
 A rule-based framework adjusts trading behavior based on sentiment:
@@ -39,7 +38,7 @@ A rule-based framework adjusts trading behavior based on sentiment:
 - **Extreme Greed**: Minimize exposure and apply strict risk controls.
 
 The goal is to control behavioral bias rather than predict market direction.
-✅ BACKTEST (FIX INTERPRETATION)
+
 ## Backtest Results
 
 | Metric             | Baseline      | Strategy      |
@@ -52,7 +51,7 @@ The goal is to control behavioral bias rather than predict market direction.
 The strategy significantly reduces maximum drawdown, at the cost of lower overall returns. This shows that sentiment-based rules improve downside protection, even though they reduce overall return potential.
 
 Note: This is a simplified backtest and does not include transaction costs or slippage.
-✅ KEY FINDINGS (SHARPENED)
+
 ## Key Findings
 
 - Trading volume increases during Greed phases, but performance per trade declines.
@@ -62,7 +61,7 @@ Note: This is a simplified backtest and does not include transaction costs or sl
 - Extreme Fear reduces participation, limiting both losses and opportunities.
 - Loss magnitude is substantially higher in Greed compared to Neutral conditions.
 - Position sizing is more effective in Fear conditions, while over-sizing in Greed reduces efficiency.
-✅ STRATEGY RECOMMENDATIONS (FINAL SAFE)
+
 ## Strategy Recommendations
 
 - Reduce position size and leverage during Greed and Extreme Greed conditions.
@@ -77,7 +76,7 @@ Note: This is a simplified backtest and does not include transaction costs or sl
 - Helps reduce exposure to large losses during euphoric market conditions.
 - Provides a framework for integrating behavioral signals into execution strategies.
 - Supports more consistent performance by controlling sentiment-driven biases.
-✅ SYSTEM ARCHITECTURE (KEEP SIMPLE)
+
 ## System Architecture
 
 1. Data ingestion (trader data + sentiment index)
@@ -87,14 +86,14 @@ Note: This is a simplified backtest and does not include transaction costs or sl
 5. Output generation (adjusted trading behavior)
 
 This pipeline can be extended into real-time systems.
-✅ FUTURE WORK (STRONG SIGNAL)
+
 ## Future Work
 
 - Real-time sentiment integration
 - Machine learning models for loss prediction
 - Intraday sentiment signals
 - Integration with execution systems
-✅ HOW TO RUN (KEEP CLEAN)
+
 ## How to Run
 
 pip install -r requirements.txt  
