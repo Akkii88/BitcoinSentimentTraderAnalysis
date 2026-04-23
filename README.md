@@ -5,25 +5,37 @@
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.5+-green.svg)](https://matplotlib.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+🔥 HEADER (ADD THIS UNDER TITLE)
 > This project focuses on controlling trader behavior under different sentiment regimes rather than predicting market direction.
-
+✅ EXECUTIVE SUMMARY (REFINED)
 ## Executive Summary
-Analysis of 211K+ Hyperliquid trades merged with Fear & Greed Index data. Quantifies sentiment's impact on performance, revealing behavioral patterns and asymmetric risks. Delivers rule-based trading system and backtested strategies for risk reduction.
 
+This project analyzes 211K+ crypto trades alongside Bitcoin Fear & Greed sentiment data to understand how market psychology impacts trader performance.
+
+The analysis reveals that sentiment significantly influences trading behavior, particularly in terms of risk-taking, trade frequency, and loss magnitude.
+
+A rule-based system is developed to adjust trading behavior dynamically across sentiment regimes, improving risk stability and reducing exposure to large losses.
+✅ KEY INSIGHT (ELITE VERSION)
 ## Key Insight
-Higher trading activity during Greed phases does not translate into better performance. While win rates increase slightly, losses grow disproportionately larger, indicating that risk asymmetry—not win frequency—drives overall outcomes.
 
-Neutral sentiment provides the most stable environment, with balanced win rates and controlled losses.
+Higher trading activity during Greed phases does not translate into better performance. While win rates increase slightly, losses grow disproportionately larger, indicating that risk asymmetry—not win frequency—drives outcomes.
 
+Neutral sentiment provides the most stable environment, with balanced returns and controlled downside risk.
+✅ TRADING SYSTEM LOGIC (KEEP BUT CLEAN)
 ## Trading System Logic
-Rule-based engine adjusts parameters by sentiment:
-- **Extreme Fear**: trade_allowed=False, position_size_factor=0.2, leverage_limit=1.0, stop_loss=2%.
-- **Fear**: trade_allowed=True, position_size_factor=0.5, leverage_limit=2.0, stop_loss=3%.
-- **Neutral**: trade_allowed=True, position_size_factor=1.0, leverage_limit=3.0, stop_loss=5%.
-- **Greed**: trade_allowed=True, position_size_factor=0.3, leverage_limit=1.5, stop_loss=4%.
-- **Extreme Greed**: trade_allowed=False, position_size_factor=0.1, leverage_limit=1.0, stop_loss=2.5%.
 
+A rule-based framework adjusts trading behavior based on sentiment:
+
+- **Extreme Fear**: Avoid trading or take minimal exposure.
+- **Fear**: Selective trading with reduced position sizes.
+- **Neutral**: Standard position sizing and trade frequency.
+- **Greed**: Reduce position sizes and limit trade frequency.
+- **Extreme Greed**: Minimize exposure and apply strict risk controls.
+
+The goal is to control behavioral bias rather than predict market direction.
+✅ BACKTEST (FIX INTERPRETATION)
 ## Backtest Results
+
 | Metric             | Baseline      | Strategy      |
 |--------------------|---------------|---------------|
 | Total PnL         | 10,296,959    | 4,483,235     |
@@ -31,17 +43,18 @@ Rule-based engine adjusts parameters by sentiment:
 | Win Rate          | 0.411         | 0.409         |
 | Max Drawdown      | -443,038      | -221,519      |
 
-The strategy reduces maximum drawdown significantly, at the cost of lower overall returns. This highlights a key trade-off: sentiment-based controls improve risk stability rather than maximizing raw profitability.
-
+The strategy significantly reduces maximum drawdown, at the cost of lower overall returns. This highlights a trade-off between risk control and profitability.
+✅ KEY FINDINGS (SHARPENED)
 ## Key Findings
-- Trading volume increases significantly during Greed phases, but average performance per trade declines.
-- Extreme Greed shows higher win rates (~55%) but also much larger losses (~$463), indicating poor risk control.
-- Fear conditions produce fewer trades but more selective positioning, resulting in relatively stable returns.
-- Neutral sentiment provides the most consistent performance with balanced risk and reward.
-- Extreme Fear leads to reduced participation, limiting both losses and opportunities.
-- Loss magnitude is substantially higher in Greed compared to Neutral conditions, highlighting asymmetric risk exposure.
-- Position sizing appears more effective in Fear conditions, while over-sizing in Greed reduces efficiency.
 
+- Trading volume increases during Greed phases, but performance per trade declines.
+- Extreme Greed shows higher win rates but significantly larger losses, indicating poor risk control.
+- Fear conditions produce fewer but more selective trades with relatively stable outcomes.
+- Neutral sentiment delivers the most consistent performance across metrics.
+- Extreme Fear reduces participation, limiting both losses and opportunities.
+- Loss magnitude is substantially higher in Greed compared to Neutral conditions.
+- Position sizing is more effective in Fear conditions, while over-sizing in Greed reduces efficiency.
+✅ STRATEGY RECOMMENDATIONS (FINAL SAFE)
 ## Strategy Recommendations
 
 - Reduce position size and leverage during Greed and Extreme Greed conditions.
@@ -49,29 +62,32 @@ The strategy reduces maximum drawdown significantly, at the cost of lower overal
 - Limit trade frequency during high-activity Greed phases to reduce overtrading risk.
 - Maintain consistent execution rules during Neutral conditions.
 - Apply stricter stop-loss controls during sentiment extremes.
+✅ INDUSTRY IMPACT (NO HYPE)
+## Industry Impact
 
-## Business Impact
-
-- Helps traders identify sentiment regimes where behavioral risk increases.
-- Supports more disciplined position sizing and leverage control.
-- Provides a practical framework for reducing exposure to large losses during euphoric markets.
-- Converts raw trading history into usable risk-management signals.
-- Can be extended into real-time dashboards, alerts, or trading-risk tools.
-
+- Enables trading systems to adjust risk dynamically based on sentiment regimes.
+- Helps reduce exposure to large losses during euphoric market conditions.
+- Provides a framework for integrating behavioral signals into execution strategies.
+- Supports more consistent performance by controlling sentiment-driven biases.
+✅ SYSTEM ARCHITECTURE (KEEP SIMPLE)
 ## System Architecture
-1. **Data Ingestion**: Stream trader/sentiment data via Kafka; store in S3/PostgreSQL.
-2. **Data Processing**: Clean/standardize with Pandas; compute features.
-3. **Sentiment Merging**: Join on dates; add lags.
-4. **Rule Engine**: Apply sentiment rules via microservice.
-5. **Output Layer**: Generate signals; integrate via APIs.
 
+1. Data ingestion (trader data + sentiment index)
+2. Data preprocessing and feature engineering
+3. Sentiment-based merging
+4. Rule-based decision engine
+5. Output generation (adjusted trading behavior)
+
+This pipeline can be extended into real-time systems.
+✅ FUTURE WORK (STRONG SIGNAL)
 ## Future Work
-- Real-time sentiment APIs.
-- ML models for prediction.
-- Multi-asset expansion.
-- Historical backtests.
 
+- Real-time sentiment integration
+- Machine learning models for loss prediction
+- Intraday sentiment signals
+- Integration with execution systems
+✅ HOW TO RUN (KEEP CLEAN)
 ## How to Run
-1. Install: `pip install -r requirements.txt`
-2. Run: `python src/assignment_analysis.py`
-3. View: `outputs/` (charts), `insights_summary.md`
+
+pip install -r requirements.txt  
+python src/assignment_analysis.py
