@@ -8,8 +8,6 @@
 ## Executive Summary
 Analysis of 211K+ Hyperliquid trades merged with Fear & Greed Index data. Quantifies sentiment's impact on performance, revealing behavioral patterns and asymmetric risks. Delivers rule-based trading system and backtested strategies for risk reduction.
 
-> This project focuses on controlling trader behavior under different sentiment regimes rather than predicting market direction.
-
 ## Key Insight
 Higher trading activity during Greed phases does not translate into better performance. While win rates increase slightly, losses grow disproportionately larger, indicating that risk asymmetry—not win frequency—drives overall outcomes.
 
@@ -43,17 +41,20 @@ The strategy reduces maximum drawdown significantly, at the cost of lower overal
 - Position sizing appears more effective in Fear conditions, while over-sizing in Greed reduces efficiency.
 
 ## Strategy Recommendations
-- Reduce position size and leverage during Greed and Extreme Greed conditions.
-- Use sentiment as a risk-control filter rather than a directional signal.
-- Limit trade frequency during high-activity (Greed) phases to avoid overtrading.
-- Maintain consistent execution strategies during Neutral conditions.
-- Apply stricter stop-loss controls in sentiment extremes.
 
-## Industry Impact
-- Enables trading systems to adjust risk dynamically based on sentiment regimes.
-- Helps reduce exposure to large losses during euphoric market conditions.
-- Provides a framework for integrating behavioral signals into execution strategies.
-- Supports more consistent performance by controlling sentiment-driven biases.
+- Reduce position size and leverage during Greed and Extreme Greed conditions.
+- Use sentiment as a risk-control filter rather than a directional trading signal.
+- Limit trade frequency during high-activity Greed phases to reduce overtrading risk.
+- Maintain consistent execution rules during Neutral conditions.
+- Apply stricter stop-loss controls during sentiment extremes.
+
+## Business Impact
+
+- Helps traders identify sentiment regimes where behavioral risk increases.
+- Supports more disciplined position sizing and leverage control.
+- Provides a practical framework for reducing exposure to large losses during euphoric markets.
+- Converts raw trading history into usable risk-management signals.
+- Can be extended into real-time dashboards, alerts, or trading-risk tools.
 
 ## System Architecture
 1. **Data Ingestion**: Stream trader/sentiment data via Kafka; store in S3/PostgreSQL.
